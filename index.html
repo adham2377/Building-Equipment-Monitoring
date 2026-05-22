@@ -455,7 +455,7 @@ body.viewer-mode .btn-export { opacity:1; }
       <button class="btn-filter-clear" onclick="clearDeviceFilter()" id="inv-clear" style="display:none">✕ Clear</button>
     </div>
     <table>
-      <thead><tr><th>Device ID</th><th>Type</th><th>Building</th><th>Zone</th><th>Brand/Model</th><th>Mfg Date</th><th>Installed</th><th>Status</th><th style="width:70px">Actions</th></tr></thead>
+      <thead><tr><th>DEVICE NAME</th><th>Type</th><th>Building</th><th>Zone</th><th>DEVICE ID</th><th>Mfg Date</th><th>Installed</th><th>Status</th><th style="width:70px">Actions</th></tr></thead>
       <tbody id="device-tbody"></tbody>
     </table>
     <div id="device-empty" class="empty-state"><div class="icon">🔌</div>No devices yet. Add manually or upload a CSV.</div>
@@ -537,7 +537,7 @@ body.viewer-mode .btn-export { opacity:1; }
   <div class="modal">
     <div class="modal-title" id="modal-device-title">🔌 Add Device</div>
     <div class="form-row">
-      <div class="form-group"><label>Device ID / Tag</label><input type="text" id="d-id" placeholder="e.g. FAD-001"></div>
+      <div class="form-group"><label>DEVICE NAME / Tag</label><input type="text" id="d-id" placeholder="e.g. FAD-001"></div>
       <div class="form-group"><label>Device Type</label>
         <select id="d-type"><option>Smoke Detector</option><option>Heat Detector</option><option>Manual Call Point</option><option>Fire Alarm Bell / Sounder</option><option>Sprinkler Head</option><option>Fire Control Panel</option><option>Hose Reel</option><option>Fire Hydrant Hose</option><option>CO Detector</option><option>Fire Extinguisher</option><option>Fire Hydrant Hose</option><option>Pump Engine</option><option>Other</option></select>
       </div>
@@ -606,7 +606,7 @@ body.viewer-mode .btn-export { opacity:1; }
       </div>
     </div>
     <div class="form-row">
-      <div class="form-group"><label>Device ID / Zone</label><input type="text" id="e-device" placeholder="e.g. FAD-012, Zone 4"></div>
+      <div class="form-group"><label>DEVICE NAME / Zone</label><input type="text" id="e-device" placeholder="e.g. FAD-012, Zone 4"></div>
       <div class="form-group"><label>Reported By</label><input type="text" id="e-reporter" placeholder="Name / Department"></div>
     </div>
     <div class="form-row single"><div class="form-group"><label>Description &amp; Immediate Action</label><textarea id="e-desc" placeholder="Describe the event, cause, and action taken..."></textarea></div></div>
@@ -1247,11 +1247,11 @@ function renderOverviewFaults(){
   }
   el.innerHTML=`<table style="width:100%;border-collapse:collapse">
     <thead><tr>
-      <th style="padding:9px 16px;text-align:left;font-family:var(--mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid var(--border)">Device ID</th>
+      <th style="padding:9px 16px;text-align:left;font-family:var(--mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid var(--border)">DEVICE NAME</th>
       <th style="padding:9px 16px;text-align:left;font-family:var(--mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid var(--border)">Type</th>
       <th style="padding:9px 16px;text-align:left;font-family:var(--mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid var(--border)">Building</th>
       <th style="padding:9px 16px;text-align:left;font-family:var(--mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid var(--border)">Zone</th>
-      <th style="padding:9px 16px;text-align:left;font-family:var(--mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid var(--border)">Brand/Model</th>
+      <th style="padding:9px 16px;text-align:left;font-family:var(--mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid var(--border)">DEVICE ID</th>
       <th style="padding:9px 16px;text-align:left;font-family:var(--mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid var(--border)">Remarks</th>
     </tr></thead>
     <tbody>${faulty.map(d=>`<tr style="border-bottom:1px solid rgba(30,58,95,0.4)">
